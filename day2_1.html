@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="day2_1.css">
+    <!-- 2025 / 03 / 14 -->
+</head>
+<body>
+    <!--UI   
+     1. HTML/CSS로 미리 디자인
+     2. JavaScript로 추가-->
+    
+    <div class="alert-box" id="alert">
+        알림창 
+        <button id="close-btn">X</button>
+    </div>
+
+    <!-- <button onclick="document.getElementById('alert').style.display = 'block';">버튼</button> -->
+    <button id="show-btn">버튼</button>
+
+    <!-- 자바스크립트는 camelCase -->
+    <script>
+        /*
+        function alert_box_control() {
+            var alert_box = document.getElementById('alert');
+            if (alert_box.style.display == 'none') {
+                alert_box.style.display = 'block';
+            } else {
+                alert_box.style.display = 'none';
+            }
+        }
+            생성을 눌러도 닫기가 작동함함
+        */
+
+        /* 그래서 따로 만들어봄
+        function alert_box_show() {
+            document.getElementById('alert').style.display = 'block';
+        }
+        function alert_box_close() {
+            document.getElementById('alert').style.display = 'none';
+        }
+            onclick = alert_box_show() 
+        */
+
+
+        //  기타 gpt 공부    addEventListener
+        let alertBox = document.getElementById('alert');
+        let showButton = document.getElementById('show-btn');
+        let closeButton = document.getElementById('close-btn');
+
+        function showAlert() {
+            alertBox.style.display = 'block';
+        }
+        function closeAlert() {
+            console.log("닫기 버튼 클릭됨!");
+            alertBox.style.display = 'none';
+        }
+
+        // 이벤트리스너 등록
+        // 함수명에 () 같이 작성 시 즉시 실행되어버림, 이름만.
+        showButton.addEventListener('click', showAlert);
+        closeButton.addEventListener('click', closeAlert);
+        
+    </script>
+</body>
+</html>
